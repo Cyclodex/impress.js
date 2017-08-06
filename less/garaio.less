@@ -1,0 +1,147 @@
+.step {
+    width: 1000px;
+    padding: 0;
+
+    .impress-on-overview & {
+        opacity: 0;
+    }
+    outline: 10px solid red;
+}
+
+//* {
+//    opacity: 1 !important;
+//}
+
+#overview {
+    display: block;
+    font-size: 4rem;
+    opacity: 1;
+}
+a {
+    background: none;
+    &:hover,
+    &:hover,
+    &:focus {
+        background: none;
+    }
+}
+
+#title {
+    h1 {
+        line-height: 1;
+        font-size: 7rem;
+        text-align: center;
+    }
+}
+
+.title {
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.title__big {
+
+    font-size: 50rem;
+    color: #31afe1;
+    position: absolute;
+    top: -160px;
+    line-height: 1;
+    left: 0;
+    display: inline-block;
+    width: 19rem;
+    text-align: center;
+    display: none; // Disable this one for now
+
+    // Animation
+    //transform: translateY(-100px);
+    transition: all 2s 0s;
+    .present & {
+        font-size: 30rem;
+        //transform: translateY(0);
+    }
+}
+.title__text {
+    margin-left: 300px;
+    font-size: 5rem;
+    margin-top: 110px;
+    display: inline-block;
+}
+
+.content {
+    margin-left: 300px;
+
+    // Animation preset:
+    opacity: 0;
+    transition: opacity 1s 0.5s;
+    .present & {
+        opacity: 1;
+    }
+
+}
+
+// Text after the BIG letter
+.text {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    font-size: 7rem;
+}
+
+
+.scrabble {
+    display: flex;
+    > span {
+        transition: opacity 1s;
+    }
+}
+
+.scrabble__before{
+    flex: 1 1 50%;
+    text-align: right;
+}
+
+
+.scrabble__before, .scrabble__after {
+    .past &,
+    .future & {
+        opacity: 0.1;
+    }
+}
+.scrabble__main {
+    flex: 0 0 4rem;
+    text-align: center;
+    color: #31afe1;
+    transition: all 2s 1s;
+
+    .past &,
+    .future & {
+        // TODO: Do this only on the gander-slide
+        transform: rotateY(150deg);
+        opacity: 1;
+    }
+}
+.scrabble__after {
+    flex: 1 1 50%;
+    text-align: left;
+}
+
+#Werdegang {
+    .content {
+        margin-top: 200px;
+    }
+}
+.impress-on-Werdegang {
+    .scrabble__main {
+        opacity: 0.3;
+    }
+    //.scrabble__before, .scrabble__after {
+    //    opacity: 0.05;
+    //}
+    .scrabble--Werdegang {
+        transition: all 2s 1s;
+        transform: rotateY(180deg);
+        > span {
+            opacity: 1;
+        }
+    }
+}
