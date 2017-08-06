@@ -7,9 +7,11 @@ body {
     width: 1000px;
     padding: 0;
 
-    .impress-on-overview & {
+    // Hide all the slides when on overview
+    .impress-on-Overview & {
         opacity: 0;
     }
+    // Show the border of all slides
     //outline: 10px solid red;
 }
 
@@ -110,15 +112,16 @@ a {
 
 
 // Specific slides
-#overview {
+#Overview {
     display: block;
     font-size: 4rem;
     opacity: 1;
+}
+.impress-on-Overview {
     .scrabble__main {
         opacity: 1;
     }
 }
-
 
 .impress-on-GanderFabian {
     .scrabble--GanderFabian {
