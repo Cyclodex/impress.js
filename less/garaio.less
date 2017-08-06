@@ -1,3 +1,8 @@
+body {
+    background: radial-gradient(rgb(53, 50, 50), rgb(2, 2, 2));
+    color: white;
+}
+
 .step {
     width: 1000px;
     padding: 0;
@@ -5,18 +10,13 @@
     .impress-on-overview & {
         opacity: 0;
     }
-    outline: 10px solid red;
+    //outline: 10px solid red;
 }
 
 //* {
 //    opacity: 1 !important;
 //}
 
-#overview {
-    display: block;
-    font-size: 4rem;
-    opacity: 1;
-}
 a {
     background: none;
     &:hover,
@@ -47,18 +47,9 @@ a {
     top: -160px;
     line-height: 1;
     left: 0;
-    display: inline-block;
     width: 19rem;
     text-align: center;
     display: none; // Disable this one for now
-
-    // Animation
-    //transform: translateY(-100px);
-    transition: all 2s 0s;
-    .present & {
-        font-size: 30rem;
-        //transform: translateY(0);
-    }
 }
 .title__text {
     margin-left: 300px;
@@ -90,9 +81,6 @@ a {
 
 .scrabble {
     display: flex;
-    > span {
-        transition: opacity 1s;
-    }
 }
 
 .scrabble__before{
@@ -102,6 +90,7 @@ a {
 
 
 .scrabble__before, .scrabble__after {
+    transition: opacity 1s;
     .past &,
     .future & {
         opacity: 0.1;
@@ -111,32 +100,60 @@ a {
     flex: 0 0 4rem;
     text-align: center;
     color: #31afe1;
-    transition: all 2s 1s;
-
-    .past &,
-    .future & {
-        // TODO: Do this only on the gander-slide
-        transform: rotateY(150deg);
-        opacity: 1;
-    }
+    opacity: 0.3;
 }
+
 .scrabble__after {
     flex: 1 1 50%;
     text-align: left;
 }
 
-#Werdegang {
+
+// Specific slides
+#overview {
+    display: block;
+    font-size: 4rem;
+    opacity: 1;
+    .scrabble__main {
+        opacity: 1;
+    }
+}
+
+
+.impress-on-GanderFabian {
+    .scrabble--GanderFabian {
+        .scrabble__main {
+            transition: all 2s 1s;
+            transform: rotateY(150deg);
+            opacity: 1;
+        }
+    }
+}
+
+#Referenzen {
     .content {
         margin-top: 200px;
+        margin-left: 0;
+    }
+}
+.impress-on-Referenzen {
+    .scrabble--Referenzen {
+        transition: all 3s 2s;
+        transform: translate3d(0px,0px,5000px);
+
+        > span {
+            opacity: 1;
+        }
+    }
+}
+
+
+#Werdegang {
+    .content {
+        margin: 200px 0 0 100px;
     }
 }
 .impress-on-Werdegang {
-    .scrabble__main {
-        opacity: 0.3;
-    }
-    //.scrabble__before, .scrabble__after {
-    //    opacity: 0.05;
-    //}
     .scrabble--Werdegang {
         transition: all 2s 1s;
         transform: rotateY(180deg);
