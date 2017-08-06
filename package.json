@@ -36,6 +36,10 @@
     "karma-cli": "1.0.0",
     "karma-qunit": "1.0.0",
     "karma-sauce-launcher": "1.0.0",
-    "qunitjs": "2.0.0-rc1"
+    "qunitjs": "^1.14.0",
+    "less": "^2.7.2",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
+    "browser-sync": "^2.18.13"
   }
 }
