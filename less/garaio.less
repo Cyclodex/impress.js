@@ -4,7 +4,7 @@ body {
 }
 
 .impress-enabled .step {
-    width: 1000px;
+    width: 1100px;
     padding: 0;
 
     // Hide all the slides when on overview
@@ -176,10 +176,17 @@ td {
     display: block;
     font-size: 4rem;
     opacity: 1;
+
+    .scrabble__main {
+        transition: all 2s 0s;
+    }
 }
 .impress-on-Overview {
     .scrabble__main {
         opacity: 1;
+    }
+    .scrabble__before, .scrabble__after {
+        transition: all 5s 2s;
     }
 }
 
@@ -229,8 +236,7 @@ td {
     .content {
         margin: 200px 0 0 -220px;
     }
-    .job--garaio,
-    .job--nothing {
+    .job {
         opacity: 0;
     }
 }
@@ -244,18 +250,24 @@ td {
     }
 
     #Werdegang{
-        .job--nothing {
-            transition: opacity 5s 4s;
-            opacity: 1;
-        }
-        .job--garaio {
-            transition: opacity 5s 10s;
-            opacity: 1;
+
+        &.present {
+            .job--sunrise {
+                transition: opacity 5s 2s;
+                opacity: 1;
+            }
+            .job--nothing {
+                transition: opacity 5s 10s;
+                opacity: 1;
+            }
+            .job--garaio {
+                transition: opacity 5s 18s;
+                opacity: 1;
+            }
         }
     }
 }
-.impress-on-Arbeit,
-[class^="impress-supported impress-enabled impress-on-Arbeit"]
+.impress-on-Fachkenntnisse
 {
     .scrabble--Arbeit {
         transition: all 2s 1s;
@@ -265,6 +277,24 @@ td {
     }
 }
 
-.impress-on-ArbeitWords {
-    #ArbeitWords {}
+.impress-on-Implementation,
+[class^="impress-supported impress-enabled impress-on-Implementation"]
+{
+    .scrabble--Implementation {
+        transition: all 2s 1s;
+        > span {
+            opacity: 1;
+        }
+    }
+}
+
+
+.impress-on-Demos
+{
+    .scrabble--Demos {
+        transition: all 2s 1s;
+        > span {
+            opacity: 1;
+        }
+    }
 }
