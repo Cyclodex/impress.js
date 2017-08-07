@@ -3,13 +3,20 @@ body {
     color: white;
 }
 
-.step {
+.impress-enabled .step {
     width: 1000px;
     padding: 0;
 
     // Hide all the slides when on overview
     .impress-on-Overview & {
         opacity: 0;
+    }
+
+    opacity: 0;
+    &.active {
+        opacity: 1;
+        //background-color: rgba(0,0,0,0.3);
+        //box-shadow: 0 0 20px 10px rgba(0,0,0,0.3);
     }
     // Show the border of all slides
     //outline: 10px solid red;
@@ -38,7 +45,7 @@ a {
 
 .title {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .title__big {
@@ -62,6 +69,7 @@ a {
 
 .content {
     margin-left: 300px;
+    font-size: 2rem;
 
     // Animation preset:
     opacity: 0;
@@ -69,7 +77,27 @@ a {
     .present & {
         opacity: 1;
     }
+}
 
+.content__logo {
+    max-width: 220px;
+    padding: 0px;
+    max-height: 90px;
+    text-align: center;
+}
+
+.content__image {
+    max-width: 220px;
+}
+
+table {
+    margin: 0 auto;
+}
+td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 30px;
+    height: 100px;
 }
 
 // Text after the BIG letter
@@ -95,14 +123,14 @@ a {
     transition: opacity 1s;
     .past &,
     .future & {
-        opacity: 0.1;
+        opacity: 0.05;
     }
 }
 .scrabble__main {
     flex: 0 0 4rem;
     text-align: center;
     color: #31afe1;
-    opacity: 0.3;
+    opacity: 0.2;
 }
 
 .scrabble__after {
@@ -123,6 +151,13 @@ a {
     }
 }
 
+#GanderFabian {
+    .content {
+        margin-left: 150px;
+        text-align: center;
+    }
+}
+
 .impress-on-GanderFabian {
     .scrabble--GanderFabian {
         .scrabble__main {
@@ -135,8 +170,11 @@ a {
 
 #Referenzen {
     .content {
-        margin-top: 200px;
+        margin-top: 300px;
         margin-left: 0;
+        td {
+            text-align: left;
+        }
     }
 }
 .impress-on-Referenzen {
@@ -153,7 +191,7 @@ a {
 
 #Werdegang {
     .content {
-        margin: 200px 0 0 100px;
+        margin: 200px 0 0 -220px;
     }
 }
 .impress-on-Werdegang {
