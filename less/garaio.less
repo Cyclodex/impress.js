@@ -19,7 +19,7 @@ body {
         //box-shadow: 0 0 20px 10px rgba(0,0,0,0.3);
     }
     // Show the border of all slides
-    //outline: 10px solid red;
+    outline: 10px solid red;
 }
 
 //* {
@@ -121,7 +121,7 @@ td {
 
 
 .scrabble__before, .scrabble__after {
-    transition: opacity 1s;
+    transition: opacity 2s 1s;
     .past &,
     .future & {
         opacity: 0.05;
@@ -132,6 +132,7 @@ td {
     text-align: center;
     color: #31afe1;
     opacity: 0.2;
+    transition: all 1s 0s;
 }
 
 .scrabble__after {
@@ -174,9 +175,6 @@ td {
     font-size: 4rem;
     opacity: 1;
 
-    .scrabble__main {
-        transition: all 2s 0s;
-    }
 }
 .impress-on-Overview {
     .scrabble__main {
@@ -286,13 +284,34 @@ td {
             opacity: 1;
         }
     }
+
+    .step--implementation {
+        opacity: 1;
+        transition: all 2s;
+    }
+    // Different timings for the transition
+    .implementation--json {
+        transition-delay: 2s;
+    }
+    // Different timings for the transition
+    .implementation--svg {
+        transition-delay: 3s;
+    }
+}
+
+// Show content for implementation pages
+.step--implementation {
+    max-width: 100vw;
+    .content {
+        opacity: 1;
+    }
 }
 
 #ImplementationJSON {
     height: 80vh;
     .content__image {
         width: auto;
-        max-width: 50vw;
+        max-width: 80vw;
         max-height: 70vh;
         box-shadow: 0 0 20px 10px rgba(0,0,0,0.8);
         border: 5px solid black;
@@ -302,17 +321,55 @@ td {
         top: -40px;
         right: 0;
     }
-    .image--json-text {
+    .image--json-code {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -40px;
+        left: 40px;
         z-index: 1;
+        min-width: 500px;
+        max-height: 100%;
     }
     .image--json-result {
         position: absolute;
-        bottom: 0;
-        right: 0;
+        bottom: -100px;
+        left: 50%;
         z-index: 0;
+    }
+}
+
+#ImplementationSVG {
+    height: 80vh;
+    .content__image {
+        width: auto;
+        max-width: 80vw;
+        min-width: 900px;
+        max-height: 70vh;
+        box-shadow: 0 0 20px 10px rgba(0,0,0,0.8);
+        border: 5px solid black;
+    }
+    .title__text {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        z-index: 3;
+    }
+    .image--svg-code {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        z-index: 1;
+    }
+    .content__code {
+        position: absolute;
+        bottom: -100px;
+        right: 0;
+        z-index: 3;
+        width: 700px;
+        height: 400px;
+
+        iframe {
+            height: 280px;
+        }
     }
 }
 
@@ -322,6 +379,32 @@ td {
         transition: all 2s 1s;
         > span {
             opacity: 1;
+        }
+    }
+}
+
+#OverviewLast {
+    display: none;
+}
+.impress-on-OverviewLast {
+    .step {
+        display: none;
+    }
+    .scrabble__main {
+        opacity: 1;
+    }
+    .scrabble {
+        &,
+        > span {
+            transition: opactiy 1s 0s;
+            cursor: pointer;
+        }
+
+        &:hover {
+            &,
+            > span {
+                opacity: 1;
+            }
         }
     }
 }
