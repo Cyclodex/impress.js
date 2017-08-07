@@ -90,6 +90,10 @@ a {
     max-width: 220px;
 }
 
+.nothing-logo {
+    color: #ff6600;
+}
+
 table {
     margin: 0 auto;
 }
@@ -138,6 +142,34 @@ td {
     text-align: left;
 }
 
+.buzz-words {
+    margin-top: 300px;
+    .word {
+        opacity: 0;
+        padding: 0 20px;
+
+        // Add appearance to all the words
+        .present & {
+            .loopItems(30);
+            opacity: 1;
+        }
+    }
+
+    .focus {
+        color: #31afe1;
+    }
+
+}
+
+/* Create a Parametric mixin and add a guard operation */
+.loopItems(@index, @i: 0) when(@index >= 0) {
+    &:nth-child(@{i}) {
+        transition: ~"opacity 1s @{i}s";
+    }
+    /* Interation call and operation */
+    .loopItems(@index - 1, @i + 1);
+}
+
 
 // Specific slides
 #Overview {
@@ -168,6 +200,10 @@ td {
     }
 }
 
+.scrabble--Referenzen {
+    transition: all 2s 0.5s;
+}
+
 #Referenzen {
     .content {
         margin-top: 300px;
@@ -193,6 +229,10 @@ td {
     .content {
         margin: 200px 0 0 -220px;
     }
+    .job--garaio,
+    .job--nothing {
+        opacity: 0;
+    }
 }
 .impress-on-Werdegang {
     .scrabble--Werdegang {
@@ -202,4 +242,29 @@ td {
             opacity: 1;
         }
     }
+
+    #Werdegang{
+        .job--nothing {
+            transition: opacity 5s 4s;
+            opacity: 1;
+        }
+        .job--garaio {
+            transition: opacity 5s 10s;
+            opacity: 1;
+        }
+    }
+}
+.impress-on-Arbeit,
+[class^="impress-supported impress-enabled impress-on-Arbeit"]
+{
+    .scrabble--Arbeit {
+        transition: all 2s 1s;
+        > span {
+            opacity: 1;
+        }
+    }
+}
+
+.impress-on-ArbeitWords {
+    #ArbeitWords {}
 }
