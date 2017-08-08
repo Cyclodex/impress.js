@@ -125,6 +125,9 @@ td {
     .future & {
         opacity: 0.05;
     }
+    .present & {
+        opacity: 0.5;
+    }
 }
 .scrabble__main {
     flex: 0 0 4rem;
@@ -447,13 +450,16 @@ td {
     .step {
         display: none;
     }
+}
+.impress-on-Overview,
+.impress-on-OverviewLast {
     .scrabble__main {
         opacity: 1;
     }
     .scrabble {
         &,
         > span {
-            transition: opactiy 1s 0s;
+            transition: all 1s 0s;
             cursor: pointer;
         }
 
